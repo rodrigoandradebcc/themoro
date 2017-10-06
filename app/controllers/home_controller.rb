@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   end
 
-  def music
+  def agenda
     @events = Event.all.order('date_event asc')
   end
 end
