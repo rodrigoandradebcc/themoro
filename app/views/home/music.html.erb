@@ -1,0 +1,33 @@
+<div class="container">
+
+  <div class="panel panel-primary">
+    <div class="panel-headind">
+      <h3 class="panel-title">Eventos</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover" id="dev-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Data</th>
+            <th>Nome do Evento</th>
+            <th>Responsável</th>
+            <th>Local do Evento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @events.each do |event| %>
+          <tr>
+            <td><%= event.id %></td>
+            <td><%= l event.date_event %></td>
+            <td><%= event.name %></td>
+            <td><%= event.responsible %></td>
+            <td><%= event.location %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /.container -->

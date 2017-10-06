@@ -1,0 +1,90 @@
+
+<div class="container">
+  <%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
+      <% event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-group row">
+    <%= form.label :name, 'Nome', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.text_field :name,id: :event_name, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :date_event, 'Data do Evento', :class => "col-3 col-form-label"%>
+    <div class="col-9">
+      <%= form.datetime_select :date_event, id: :event_date_event, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :responsible, 'Empresa Responsável', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.text_field :responsible, id: :event_responsible, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :location, 'Local', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.text_field :location, id: :event_location, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :situation, 'Situação', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.check_box :situation, id: :event_situation %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :details, 'Detalhes', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.text_area :details, id: :event_details, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :work_time, 'Horas de Show', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.text_field :work_time, id: :event_work_time, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :price, 'Preço do Evento', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.number_field :price, id: :event_price, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :note, 'Anotações', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.text_field :note, id: :event_note, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :ballet, 'Dançarinos', :class => "col-3 col-form-label" %>
+    <div class="col-9">
+      <%= form.check_box :ballet, id: :event_ballet %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Criar Evento', class: "btn btn-primary" %>
+  </div>
+  <%end%>
+</div>
