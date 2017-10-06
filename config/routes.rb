@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :events
   get 'home/donos'
-  get 'home/music'
+  get 'home/agenda'
 
   root 'home#music'
 
