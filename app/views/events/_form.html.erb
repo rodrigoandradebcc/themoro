@@ -86,21 +86,15 @@
   <h1>Custos</h1>
   <br>
 
-  <%= form.fields_for :expenses do |expenses_fields| %>
-  <div class="form-group row">
-    <%= expenses_fields.label :name, 'Nome', :class => "col-3 col-form-label" %>
-    <div class="col-9">
-      <%= expenses_fields.text_field :name, :class => "form-control" %>
-    </div>
-  </div>
+  <div id="phones">
 
-  <div class="form-group row">
-    <%= expenses_fields.label :valor, 'Valor', :class => "col-3 col-form-label" %>
-    <div class="col-9">
-      <%= expenses_fields.text_field :value, :class => "form-control" %>
-    </div>
+
+    <%= form.fields_for :expenses do |expenses_fields| %>
+      <%= render partial: "expenses_fields", locals: {form: expenses_fields}%>
+    <% end %>
+
+    <%= link_to_add_association('[Adicionar Custo]', form, :expenses) %>
   </div>
-  <% end %>
 
   <div class="actions">
     <%= form.submit 'Salvar Evento', class: "btn btn-primary" %>
