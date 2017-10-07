@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :expenses
   resources :events
   get 'home/donos'
   get 'home/agenda'

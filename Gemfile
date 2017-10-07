@@ -8,7 +8,7 @@ end
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
-
+gem 'cocoon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
