@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'home/donos'
   get 'home/agenda'
 
-  root 'home#music'
+  root 'home#agenda'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
